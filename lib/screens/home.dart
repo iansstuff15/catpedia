@@ -12,10 +12,10 @@ class Home extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double widgth = MediaQuery.of(context).size.width;
 
-    return SafeArea(
-      child: Scaffold(
+    return  Scaffold(
         backgroundColor: Colors.white,
-        body: Stack(
+        body: SafeArea(
+          child: Stack(
           children: <Widget>[
             Container(
               width: double.infinity,
@@ -236,8 +236,8 @@ class Home extends StatelessWidget {
 
             /// A container with a box decoration, padding, and a column with a container inside.
           ],
-        ),
-      ),
+        )),
+      
     );
   }
 }
