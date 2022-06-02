@@ -75,7 +75,7 @@ class Home extends StatelessWidget {
                 right: 0,
                 bottom: 0,
                 child: Container(
-                  height: height * .45,
+                  
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
