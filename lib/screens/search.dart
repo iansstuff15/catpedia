@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:catpedia/components/skeleton.dart';
 import 'package:flutter/material.dart';
 
 class Search extends StatelessWidget {
@@ -7,6 +8,16 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+  var focusSearch = FocusNode();
+  bool focused = false;
+  void setFocus() {
+    if (!focused) {
+      FocusScope.of(context).requestFocus(focusSearch);
+      focused = true;
+    }
+  } setFocus();
+
     return Scaffold(
       
       body: SafeArea(
@@ -42,6 +53,7 @@ class Search extends StatelessWidget {
               ),
             width: 220,
             child: TextField(
+            focusNode: focusSearch,
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               border: InputBorder.none,
@@ -65,8 +77,8 @@ class Search extends StatelessWidget {
           
             ],
           ),
-         
-          
+          SizedBox(height: 20,),
+          SearchItemSkeleton(),
         ],
       ))),
     );
