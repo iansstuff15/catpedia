@@ -2,6 +2,7 @@
 
 import 'dart:ffi';
 
+import 'package:catpedia/screens/search.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -92,7 +93,10 @@ class Home extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   child: Column(
                     children: <Widget>[
-                      Container(
+
+                      GestureDetector(
+                        onTap: () => Navigator.pushNamed(context, Search.id),
+                        child:  Container(
                         width: double.infinity,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
@@ -129,6 +133,8 @@ class Home extends StatelessWidget {
                           ],
                         ),
                       ),
+                      ),
+                     
                       SizedBox(
                         height: 10,
                       ),
@@ -189,7 +195,7 @@ class Home extends StatelessWidget {
                                 ),
                                 Container(
                                     child: Text(
-                                  'Show All',
+                                  'Facts',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -218,7 +224,7 @@ class Home extends StatelessWidget {
                                 ),
                                 Container(
                                     child: Text(
-                                  'Show All',
+                                  'Cat Info',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
