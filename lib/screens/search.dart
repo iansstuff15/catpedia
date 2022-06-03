@@ -66,17 +66,19 @@ class _SearchState extends State<Search> {
                             controller: SearchString,
                             onChanged: (value) async {
                               String url =
-                                  'https://api.thecatapi.com/v1/breeds/search?q=${value}&api_key=8f9719f3-c53c-4aa0-82f0-4107493d8c21';
+                                  'https://api.thecatapi.com/v1/breeds/search?q=${value}';
                               Uri uri = Uri.parse(url);
-                              var response =
-                                  await RequestHelper.getRequest(uri);
+                              var response = await RequestHelper.getRequest(
+                                  uri, "9155b5b8-7044-411d-b32d-56eeaf8e2dca");
                               if (response == null) {
                                 log(response);
+                                print(response.toString());
                                 return;
                               }
                               if (response != null) {
                                 log(url);
                                 log(response.toString());
+                                print(response.toString());
                               }
                             },
                             focusNode: focusSearch,
