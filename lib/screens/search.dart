@@ -69,7 +69,7 @@ class _SearchState extends State<Search> {
                                   'https://api.thecatapi.com/v1/breeds/search?q=${value}';
                               Uri uri = Uri.parse(url);
                               var response = await RequestHelper.getRequest(
-                                  uri, "9155b5b8-7044-411d-b32d-56eeaf8e2dca");
+                                  uri, "8f9719f3-c53c-4aa0-82f0-4107493d8c21");
                               if (response == null) {
                                 log(response);
                                 print(response.toString());
