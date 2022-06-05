@@ -5,24 +5,23 @@ import 'package:flutter/material.dart';
 class Food extends StatelessWidget {
   static String id = 'food';
 
-    List title = [
-      "Meat",
-      "Whole Grains",
-      "Fish",
-      "Eggs",
-      "Veggies",
-      "Cheese",
-    ];
+  List title = [
+    "Meat",
+    "Whole Grains",
+    "Fish",
+    "Eggs",
+    "Veggies",
+    "Cheese",
+  ];
 
-    List par = [
-      "Cats eat meat, plain and simple. They require protein from meat to maintain a healthy heart, vision, and reproductive system. Cooked beef, chicken, turkey, and small amounts of lean deli meats are excellent sources of protein. Your cat may become ill if it consumes raw or spoiled meat. ",
-      "Oats have a high protein-to-calorie ratio and are simple to prepare. Many cats enjoy corn, and polenta, a coarsely ground cornmeal, has a pleasing texture. Brown rice, barley, and wheat berries can all be used, but they may need to be mashed first. Cats prefer smaller grains such as millet and couscous. Just make sure any grains you give your cat are cooked so they can be fully digested. Whole wheat breadcrumbs are also acceptable.",
-      "Fish have a lot of omega-3 fatty acids, which help your cat's eyes stay sharp as well as help with arthritis, kidney disease, and heart disorders. Canned or cooked fish is fine for a treat. But don't share your shashimi or sushi with raw fish. Raw fish in general isn't a good idea.",
-      "Eggs are another super source of protein for your cat. But make sure they're cooked. Like raw meat and fish, raw eggs can harm your kitty.",
-      "Cats do not all like vegetables, and even fewer like fruits (because felines cannot taste sweet flavors). However, they are high in vitamins and fiber, as well as water, which aids digestion. Steamed broccoli or asparagus, fresh cucumber or cantaloupe But you might have a better chance slipping them a veggie burger — seriously — just make sure the patty doesn't contain onions or garlic.",
-      "Cheese is a high-protein snack that is safe for your cat in moderation. However, cheese contains less 'complete' protein than meat, fish, and eggs. Also, many cats' stomachs are sensitive to dairy, so go easy on the cheesy treats and skip the milk saucer.",
-    ];
-
+  List par = [
+    "Cats eat meat, plain and simple. They require protein from meat to maintain a healthy heart, vision, and reproductive system. Cooked beef, chicken, turkey, and small amounts of lean deli meats are excellent sources of protein. Your cat may become ill if it consumes raw or spoiled meat. ",
+    "Oats have a high protein-to-calorie ratio and are simple to prepare. Many cats enjoy corn, and polenta, a coarsely ground cornmeal, has a pleasing texture. Brown rice, barley, and wheat berries can all be used, but they may need to be mashed first. Cats prefer smaller grains such as millet and couscous. Just make sure any grains you give your cat are cooked so they can be fully digested. Whole wheat breadcrumbs are also acceptable.",
+    "Fish have a lot of omega-3 fatty acids, which help your cat's eyes stay sharp as well as help with arthritis, kidney disease, and heart disorders. Canned or cooked fish is fine for a treat. But don't share your shashimi or sushi with raw fish. Raw fish in general isn't a good idea.",
+    "Eggs are another super source of protein for your cat. But make sure they're cooked. Like raw meat and fish, raw eggs can harm your kitty.",
+    "Cats do not all like vegetables, and even fewer like fruits (because felines cannot taste sweet flavors). However, they are high in vitamins and fiber, as well as water, which aids digestion. Steamed broccoli or asparagus, fresh cucumber or cantaloupe But you might have a better chance slipping them a veggie burger — seriously — just make sure the patty doesn't contain onions or garlic.",
+    "Cheese is a high-protein snack that is safe for your cat in moderation. However, cheese contains less 'complete' protein than meat, fish, and eggs. Also, many cats' stomachs are sensitive to dairy, so go easy on the cheesy treats and skip the milk saucer.",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +65,7 @@ class Food extends StatelessWidget {
                       Image.asset(
                         'assets/food_cat.jpg',
                         width: width_ * .900,
-                        height: height_ * .400,
+                        height: height_ * .300,
                       ),
                       SizedBox(
                         height: 10,
@@ -88,6 +87,7 @@ class Food extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
+                      SizedBox(height: 20,),
                       text(context, title[0], par[0], 'assets/food_meat.jpg',
                           .900, .300),
                       text(context, title[1], par[1], 'assets/food_grains.jpg',
