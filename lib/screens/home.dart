@@ -7,6 +7,7 @@ import 'package:catpedia/screens/search.dart';
 import 'package:catpedia/screens/cat_info.dart';
 import 'package:flutter/material.dart';
 import 'package:catpedia/screens/question.dart';
+
 class Home extends StatelessWidget {
   static String id = 'home';
 
@@ -34,8 +35,9 @@ class Home extends StatelessWidget {
                           width: 100,
                         ),
                         GestureDetector(
-                          onTap: () => Navigator.pushNamed(context, Question.id),
-                          child: Icon(Icons.info))
+                            onTap: () =>
+                                Navigator.pushNamed(context, Question.id),
+                            child: Icon(Icons.info))
                       ]),
                   SizedBox(
                     height: 15,
@@ -145,7 +147,8 @@ class Home extends StatelessWidget {
                         padding: EdgeInsets.only(top: 8, right: 17),
                         decoration: BoxDecoration(
                             color: Color(0xff7EBCC3),
-                            borderRadius: BorderRadius.all(Radius.circular(20))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
@@ -159,15 +162,14 @@ class Home extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              child: Text(
-                                'Show All',
+                                child: Text(
+                              'Show All',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                ),
-                              )
-                            ),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            )),
                             Image.asset(
                               'assets/view_all2.png',
                               height: 58,
@@ -214,7 +216,8 @@ class Home extends StatelessWidget {
                           width: 10,
                         ),
                         GestureDetector(
-                          onTap: () => Navigator.pushNamed(context, catInfo.id),
+                          onTap: () =>
+                              Navigator.pushNamed(context, CareInfo.id),
                           child: Container(
                             width: widgth * .430,
                             padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
@@ -224,7 +227,7 @@ class Home extends StatelessWidget {
                                     BorderRadius.all(Radius.circular(15))),
                             child: Row(
                               children: <Widget>[
-                               Image.asset(
+                                Image.asset(
                                   'assets/care2.png',
                                   height: 100,
                                   width: 80,

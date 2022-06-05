@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Home.id: (context) => Home(),
         Search.id: (context) => Search(),
-        catInfo.id: (context) => catInfo(),
+        CareInfo.id: (context) => CareInfo(),
         GenInfo.id: (context) => GenInfo(),
         Question.id: (context) => Question(),
         Breedlist.id: (context) => Breedlist(),

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 import 'care_geninfo.dart';
 
-class catInfo extends StatelessWidget {
+class CareInfo extends StatelessWidget {
   static String id = 'cat_info';
 
-  catInfo({Key? key}) : super(key: key);
+  CareInfo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
