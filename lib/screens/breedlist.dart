@@ -60,9 +60,7 @@ class _BreedlistState extends State<Breedlist> {
     final imgbody =json.decode(imgdata);
     for (var imgdata in imgbody ){
       img.add(Img.fromJson(imgdata));
-      setState(() {
-        _isLoading = false;
-      });
+
     }
     const url = 'https://api.thecatapi.com/v1/breeds';
     const key = '8f9719f3-c53c-4aa0-82f0-4107493d8c21';
@@ -79,6 +77,9 @@ class _BreedlistState extends State<Breedlist> {
         blist.add(Breed.fromJson(jsondata));
       }
     }
+    setState(() {
+      _isLoading = false;
+    });
     return blist;
   }
 
