@@ -3,6 +3,7 @@ import 'package:catpedia/screens/search.dart';
 import 'package:catpedia/screens/question.dart';
 import 'package:catpedia/screens/cat_info.dart';
 import 'package:catpedia/screens/breedlist.dart';
+import 'package:catpedia/screens/care_geninfo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         Home.id: (context) => Home(),
         Search.id: (context) => Search(),
         catInfo.id: (context) => catInfo(),
-        Question.id:(context) => Question(),
+        GenInfo.id: (context) => GenInfo(),
+        Question.id: (context) => Question(),
         Breedlist.id: (context) => Breedlist(),
       },
     );
