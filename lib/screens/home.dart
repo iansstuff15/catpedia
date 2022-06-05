@@ -3,6 +3,7 @@
 import 'dart:ffi';
 
 import 'package:catpedia/screens/search.dart';
+import 'package:catpedia/screens/cat_info.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -205,31 +206,34 @@ class Home extends StatelessWidget {
                         SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          width: widgth * .430,
-                          padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                          decoration: BoxDecoration(
-                              color: Color(0xFFF5C975),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15))),
-                          child: Row(
-                            children: <Widget>[
-                             Image.asset(
-                                'assets/care2.png',
-                                height: 100,
-                                width: 80,
-                                fit: BoxFit.fitWidth,
-                              ),
-                              Container(
-                                  child: Text(
-                                'Cat Info',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.brown,
+                        GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, catInfo.id),
+                          child: Container(
+                            width: widgth * .430,
+                            padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            decoration: BoxDecoration(
+                                color: Color(0xFFF5C975),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15))),
+                            child: Row(
+                              children: <Widget>[
+                               Image.asset(
+                                  'assets/care2.png',
+                                  height: 100,
+                                  width: 80,
+                                  fit: BoxFit.fitWidth,
                                 ),
-                              )),
-                            ],
+                                Container(
+                                    child: Text(
+                                  'Cat Info',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                    color: Colors.brown,
+                                  ),
+                                )),
+                              ],
+                            ),
                           ),
                         )
                       ],
