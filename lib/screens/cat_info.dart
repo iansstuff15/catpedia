@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'care_geninfo.dart';
 
 class CareInfo extends StatelessWidget {
-  static String id = 'cat_info';
+  static String id = 'care_info';
 
   CareInfo({Key? key}) : super(key: key);
 
