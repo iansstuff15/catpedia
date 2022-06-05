@@ -15,16 +15,19 @@ class Breed {
     required this.id,
     required this.name,
     required this.country_code,
+    required this.image_url
   });
 
   final String id;
   final String name;
   final String country_code;
+  final String image_url;
 
   factory Breed.fromJson(Map<String, dynamic> json) => Breed(
         id: json['id'],
         name: json['name'],
         country_code: json['country_code'],
+        image_url: json['image[url]'],
       );
 }
 
@@ -66,21 +69,46 @@ class _BreedlistState extends State<Breedlist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return Card(
-            child: Column(
-              children: [
-                Text(_breed[index].id.toString()),
-                Text(_breed[index].name.toString()),
-                Image.network('https://countryflagsapi.com/png/${_breed[index].country_code.toString().toLowerCase()}')
-              ],
-            ),
-          );
-        },
-        itemCount: _breed.length,
-      ),
-    );
+        body:SafeArea(
+          child: ListView.builder(
+            itemBuilder: (context, index){
+              return Container(
+                  height: 200,
+                  child: Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children:[
+                          Ink.image(
+                            image: AssetImage('assets/hero.png'), //placeholder img
+                            fit: BoxFit.fitHeight,
+                            child: InkWell(
+                              onTap: (){},
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.network('https://countryflagsapi.com/png/${_breed[index].country_code.toString().toLowerCase()}',
+                                width: 25,
+                                height: 25,
+                              ),
+                              Text(_breed[index].name.toString(),
+                                style: TextStyle(
+                                  fontSize: 25,
+                                ),),
+                            ],
+                          ),
+                        ],
+                      )
+                  )
+              );
+            },
+            itemCount: _breed.length,
+          ),
+        ));
   }
 }
