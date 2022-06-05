@@ -53,12 +53,16 @@ class Breedlist extends StatefulWidget {
 class _BreedlistState extends State<Breedlist> {
   final List<Img> img=[];
   final List<Breed> _breed = [];
+  bool _isLoading = true;
   Future<List<Breed>> fetchJson() async {
     final assetBundle = DefaultAssetBundle.of(context);
     final imgdata = await assetBundle.loadString('assets/img.json');
     final imgbody =json.decode(imgdata);
     for (var imgdata in imgbody ){
       img.add(Img.fromJson(imgdata));
+      setState(() {
+        _isLoading = false;
+      });
     }
     const url = 'https://api.thecatapi.com/v1/breeds';
     const key = '8f9719f3-c53c-4aa0-82f0-4107493d8c21';
@@ -88,7 +92,7 @@ class _BreedlistState extends State<Breedlist> {
     super.initState();
   }
 
-  bool _isLoading = false;
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
