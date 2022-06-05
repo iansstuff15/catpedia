@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import 'care_geninfo.dart';
+import 'care_food.dart';
 
 class CareInfo extends StatelessWidget {
   static String id = 'care_info';
@@ -53,7 +54,7 @@ class CareInfo extends StatelessWidget {
                   //if navigating, add the function call at the end of the parameters, e.g food()
 
                   car_ds(context, .450, .200, 30, 'assets/cateat.jpg', "Foods",
-                      ''),
+                      Food.id),
                   SizedBox(
                     height: 10,
                   ),
