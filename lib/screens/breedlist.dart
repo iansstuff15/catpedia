@@ -62,20 +62,37 @@ class _BreedlistState extends State<Breedlist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return Card(
-            child: Column(
-              children: [
-                Text(_breed[index].id.toString()),
-                Text(_breed[index].name.toString())
-              ],
-            ),
-          );
-        },
-        itemCount: _breed.length,
-      ),
-    );
+        body:SafeArea(
+          child: ListView.builder(
+            itemBuilder: (context, index){
+              return Container(
+                  height: 200,
+                  child: Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children:[
+                          Ink.image(
+                            image: AssetImage('assets/hero.png'), //placeholder img
+                            fit: BoxFit.fitHeight,
+                            child: InkWell(
+                              onTap: (){},
+                            ),
+                          ),
+                          Text(_breed[index].name.toString(),
+                            style: TextStyle(
+                              fontSize: 25,
+                            ),),
+                        ],
+                      )
+                  )
+              );
+            },
+            itemCount: _breed.length,
+          ),
+        ));
   }
 }
