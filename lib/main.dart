@@ -1,5 +1,6 @@
 import 'package:catpedia/screens/home.dart';
 import 'package:catpedia/screens/search.dart';
+import 'package:catpedia/screens/question.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,6 +21,8 @@ class MyApp extends StatelessWidget {
       routes: {
         Home.id: (context)=>Home(),
         Search.id:(context) => Search(),
+        Question.id:(context) => Question(),
+        
       },
     );
   }

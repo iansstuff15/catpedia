@@ -4,7 +4,7 @@ import 'dart:ffi';
 
 import 'package:catpedia/screens/search.dart';
 import 'package:flutter/material.dart';
-
+import 'package:catpedia/screens/question.dart';
 class Home extends StatelessWidget {
   static String id = 'home';
 
@@ -31,7 +31,9 @@ class Home extends StatelessWidget {
                           image: AssetImage('assets/logo.png'),
                           width: 100,
                         ),
-                        Icon(Icons.info)
+                        GestureDetector(
+                          onTap: () => Navigator.pushNamed(context, Question.id),
+                          child: Icon(Icons.info))
                       ]),
                   SizedBox(
                     height: 15,
