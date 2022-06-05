@@ -37,7 +37,7 @@ class CareInfo extends StatelessWidget {
             ),
             Container(width: width_ * .20, color: Colors.transparent),
             Text(
-              'Cat Information',
+              'Care Information',
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
           ]),

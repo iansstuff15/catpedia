@@ -235,7 +235,7 @@ class Home extends StatelessWidget {
                                 ),
                                 Container(
                                     child: Text(
-                                  'Cat Info',
+                                  'Care Info',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
