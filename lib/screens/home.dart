@@ -2,6 +2,7 @@
 
 import 'dart:ffi';
 
+import 'package:catpedia/screens/breedlist.dart';
 import 'package:catpedia/screens/search.dart';
 import 'package:catpedia/screens/cat_info.dart';
 import 'package:flutter/material.dart';
@@ -155,15 +156,19 @@ class Home extends StatelessWidget {
                               width: 50,
                             ),
                           ),
-                          Container(
+                          GestureDetector(
+                            onTap: () => Navigator.pushNamed(context, Breedlist.id),
+                            child: Container(
                               child: Text(
-                            'Show All',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white,
+                                'Show All',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              )
                             ),
-                          )),
+                          ),
                           Image.asset(
                             'assets/view_all2.png',
                             height: 58,

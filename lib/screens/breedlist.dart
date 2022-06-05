@@ -25,6 +25,7 @@ class Breed {
 }
 
 class Breedlist extends StatefulWidget {
+  static String id = 'breedlist';
   @override
   _BreedlistState createState() => _BreedlistState();
 }
