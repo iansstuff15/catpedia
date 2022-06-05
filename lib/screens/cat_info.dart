@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'care_geninfo.dart';
+
 class catInfo extends StatelessWidget {
   static String id = 'cat_info';
 
@@ -39,7 +41,8 @@ class catInfo extends StatelessWidget {
             ),
           ]),
           SizedBox(height: 30),
-          car_ds(context, .900, .230, 40, 'assets/catgeneral.jpg', "General"),
+          car_ds(context, .900, .230, 40, 'assets/catgeneral.jpg', "General",
+              GenInfo.id),
           SizedBox(
             height: 10,
           ),
@@ -47,15 +50,15 @@ class catInfo extends StatelessWidget {
             child: Column(
               children: [
                 Row(children: [
-                  
                   //if navigating, add the function call at the end of the parameters, e.g food()
 
-                  car_ds(context, .450, .200, 30, 'assets/cateat.jpg', "Foods"),
+                  car_ds(context, .450, .200, 30, 'assets/cateat.jpg', "Foods",
+                      ''),
                   SizedBox(
                     height: 10,
                   ),
                   car_ds(context, .450, .200, 30, 'assets/catgroom.jpg',
-                      "Grooming"),
+                      "Grooming", ''),
                 ]),
                 SizedBox(
                   height: 10,
@@ -63,12 +66,12 @@ class catInfo extends StatelessWidget {
                 Row(
                   children: [
                     car_ds(context, .450, .200, 30, 'assets/catbehavior.jpg',
-                        "Behavior"),
+                        "Behavior", ''),
                     SizedBox(
                       height: 10,
                     ),
-                    car_ds(
-                        context, .450, .200, 30, 'assets/catmeme.jpg', "Memes"),
+                    car_ds(context, .450, .200, 30, 'assets/catmeme.jpg',
+                        "Memes", ''),
                   ],
                 ),
               ],
@@ -80,7 +83,7 @@ class catInfo extends StatelessWidget {
   }
 
   Widget car_ds(BuildContext context, double width1, double height1,
-      double font, String pict, String text) {
+      double font, String pict, String text, String route) {
     //if navigating, add Widget nav at the end of the parameters
 
     double height = MediaQuery.of(context).size.height;
@@ -96,16 +99,18 @@ class catInfo extends StatelessWidget {
         children: [
           Ink.image(
             image: AssetImage('$pict'),
-            child: InkWell(onTap: () {}
-                //onTap: () => Navigator.push(context,MaterialPageRoute(builder: (context) => nav),
+            child: InkWell(
+              onTap: () => Navigator.pushNamed(context, route),
+              child: Center(
+                child: Text(
+                  "$text",
+                  style: TextStyle(color: Colors.white, fontSize: font),
                 ),
+              ),
+            ),
             width: width * width1,
             height: height * height1,
             fit: BoxFit.cover,
-          ),
-          Text(
-            "$text",
-            style: TextStyle(color: Colors.white, fontSize: font),
           ),
         ],
       ),
