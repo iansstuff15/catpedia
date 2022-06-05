@@ -25,19 +25,19 @@ class Breed {
     required this.id,
     required this.name,
     required this.country_code,
-    required this.image_url
+ //   required this.image_url
   });
 
   final String id;
   final String name;
   final String country_code;
-  final String image_url;
+//  final String image_url;
 
   factory Breed.fromJson(Map<String, dynamic> json,) => Breed(
         id: json['id'],
         name: json['name'],
         country_code: json['country_code'],
-        image_url: json['image']['url'],
+//        image_url: json['image']['url'],
         // image_url: flag ? json['image']['url']:'assets/hero.png',
         // Add bool flag in paramter
       );
@@ -101,7 +101,36 @@ class _BreedlistState extends State<Breedlist> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
-                      child: Stack(
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children:[
+                        Ink.image(
+
+                          image: NetworkImage(img[index].url.toString()),
+                          fit: BoxFit.cover,
+                          child: InkWell(
+                            onTap: (){},
+                          ),
+                        ),
+                        Text(_breed[index].name.toString(),
+                          style: TextStyle(
+                              fontSize: 25,
+                              foreground: Paint()
+                                ..style=PaintingStyle.stroke
+                                ..strokeWidth=6
+                                ..color=Colors.black
+                          ),),
+                        Text(_breed[index].name.toString(),
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white
+                          ),),
+
+
+                      ],
+                    ),
+
+                      /*child: Stack(
                         alignment: Alignment.center,
                         children:[
                           _breed[index].image_url == 'assets/hero.png' ?
@@ -127,7 +156,7 @@ class _BreedlistState extends State<Breedlist> {
                             ],
                           ),
                         ],
-                      )
+                      )*/
                   )
               );
             },
