@@ -1,15 +1,15 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_brace_in_string_interps
 
 import 'dart:convert';
-import 'dart:developer';
-import 'dart:ffi';
+// import 'dart:developer';
+// import 'dart:ffi';
 
-import 'package:catpedia/components/skeleton.dart';
-import 'package:catpedia/helpers/request_helper.dart';
-import 'package:flutter/foundation.dart';
+// import 'package:catpedia/components/skeleton.dart';
+// import 'package:catpedia/helpers/request_helper.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:skeletons/skeletons.dart';
 class Img{
   Img({
     required this.url,
@@ -88,6 +88,7 @@ class _BreedlistState extends State<Breedlist> {
     super.initState();
   }
 
+  bool _isLoading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,27 +105,48 @@ class _BreedlistState extends State<Breedlist> {
                     child: Stack(
                       alignment: Alignment.center,
                       children:[
+                        !_isLoading ? 
                         Ink.image(
-
                           image: NetworkImage(img[index].url.toString()),
                           fit: BoxFit.cover,
                           child: InkWell(
                             onTap: (){},
                           ),
+                        ) : SkeletonAvatar(
+                          style: SkeletonAvatarStyle(
+                            height: double.infinity,
+                            width: double.infinity,
+                            shape: BoxShape.rectangle
+                          )
                         ),
-                        Text(_breed[index].name.toString(),
-                          style: TextStyle(
-                              fontSize: 25,
-                              foreground: Paint()
-                                ..style=PaintingStyle.stroke
-                                ..strokeWidth=6
-                                ..color=Colors.black
-                          ),),
-                        Text(_breed[index].name.toString(),
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white
-                          ),),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.network('https://countryflagsapi.com/png/${_breed[index].country_code.toString().toLowerCase()}',
+                              height: 35,
+                              width: 35,
+                            ),
+                            
+                            Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Text(_breed[index].name.toString(),
+                                style: TextStyle(
+                                    fontSize: 25,
+                                    foreground: Paint()
+                                      ..style=PaintingStyle.stroke
+                                      ..strokeWidth=6
+                                      ..color=Colors.black
+                                ),),
+                                Text(_breed[index].name.toString(),
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.white
+                                  ),),
+                              ]
+                            )
+                          ],
+                        ),
 
 
                       ],
