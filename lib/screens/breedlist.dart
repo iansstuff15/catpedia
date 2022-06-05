@@ -10,6 +10,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+class Img{
+  Img({
+    required this.url,
+  });
+  final String url;
+  factory Img.fromJson(Map<String, dynamic> json) => Img(
+      url: json['url']
+  );
+}
+
 class Breed {
   Breed({
     required this.id,
@@ -38,8 +48,15 @@ class Breedlist extends StatefulWidget {
 }
 
 class _BreedlistState extends State<Breedlist> {
+  final List<Img> img=[];
   final List<Breed> _breed = [];
   Future<List<Breed>> fetchJson() async {
+    final assetBundle = DefaultAssetBundle.of(context);
+    final imgdata = await assetBundle.loadString('assets/img.json');
+    final imgbody =json.decode(imgdata);
+    for (var imgdata in imgbody ){
+      img.add(Img.fromJson(imgdata));
+    }
     const url = 'https://api.thecatapi.com/v1/breeds';
     const key = '8f9719f3-c53c-4aa0-82f0-4107493d8c21';
     Uri uri = Uri.parse(url);
