@@ -14,13 +14,17 @@ class Breed {
   Breed({
     required this.id,
     required this.name,
+    required this.country_code,
   });
+
   final String id;
   final String name;
+  final String country_code;
 
   factory Breed.fromJson(Map<String, dynamic> json) => Breed(
         id: json['id'],
         name: json['name'],
+        country_code: json['country_code'],
       );
 }
 
@@ -69,7 +73,8 @@ class _BreedlistState extends State<Breedlist> {
             child: Column(
               children: [
                 Text(_breed[index].id.toString()),
-                Text(_breed[index].name.toString())
+                Text(_breed[index].name.toString()),
+                Image.network('https://countryflagsapi.com/png/${_breed[index].country_code.toString().toLowerCase()}')
               ],
             ),
           );
