@@ -33,11 +33,13 @@ class Breed {
   final String country_code;
   final String image_url;
 
-  factory Breed.fromJson(Map<String, dynamic> json, bool flag) => Breed(
+  factory Breed.fromJson(Map<String, dynamic> json,) => Breed(
         id: json['id'],
         name: json['name'],
         country_code: json['country_code'],
-        image_url: flag ? json['image']['url']:'assets/hero.png',
+        image_url: json['image']['url'],
+        // image_url: flag ? json['image']['url']:'assets/hero.png',
+        // Add bool flag in paramter
       );
   
 }
@@ -67,9 +69,10 @@ class _BreedlistState extends State<Breedlist> {
     if (response.statusCode == 200) {
       var urjson = json.decode(response.body);
       for (var jsondata in urjson) {
-        var flag = jsondata['name'];
-        bool checkflag = flag=='European Burmese' || flag == 'Malayan' ? false:true; 
-        blist.add(Breed.fromJson(jsondata, checkflag));
+        // var flag = jsondata['name'];
+        // bool checkflag = flag=='European Burmese' || flag == 'Malayan' ? false:true; 
+        // blist.add(Breed.fromJson(jsondata, checkflag));
+        blist.add(Breed.fromJson(jsondata));
       }
     }
     return blist;
