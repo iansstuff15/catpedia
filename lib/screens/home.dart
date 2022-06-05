@@ -138,27 +138,27 @@ class Home extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.only(top: 8, right: 17),
-                      decoration: BoxDecoration(
-                          color: Color(0xff7EBCC3),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                color: Color(0xff7EBCC3),
-                                borderRadius: BorderRadius.circular(20)),
-                            child: SizedBox(
-                              width: 50,
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, Breedlist.id),
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.only(top: 8, right: 17),
+                        decoration: BoxDecoration(
+                            color: Color(0xff7EBCC3),
+                            borderRadius: BorderRadius.all(Radius.circular(20))),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  color: Color(0xff7EBCC3),
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: SizedBox(
+                                width: 50,
+                              ),
                             ),
-                          ),
-                          GestureDetector(
-                            onTap: () => Navigator.pushNamed(context, Breedlist.id),
-                            child: Container(
+                            Container(
                               child: Text(
                                 'Show All',
                               style: TextStyle(
@@ -168,14 +168,14 @@ class Home extends StatelessWidget {
                                 ),
                               )
                             ),
-                          ),
-                          Image.asset(
-                            'assets/view_all2.png',
-                            height: 58,
-                            width: 70,
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ],
+                            Image.asset(
+                              'assets/view_all2.png',
+                              height: 58,
+                              width: 70,
+                              fit: BoxFit.fitWidth,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(

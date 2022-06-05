@@ -23,12 +23,13 @@ class Breed {
   final String country_code;
   final String image_url;
 
-  factory Breed.fromJson(Map<String, dynamic> json) => Breed(
+  factory Breed.fromJson(Map<String, dynamic> json, bool flag) => Breed(
         id: json['id'],
         name: json['name'],
         country_code: json['country_code'],
-        image_url: json['image[url]'],
+        image_url: flag ? json['image']['url']:'assets/hero.png',
       );
+  
 }
 
 class Breedlist extends StatefulWidget {
@@ -47,10 +48,11 @@ class _BreedlistState extends State<Breedlist> {
     List<Breed> blist = [];
 
     if (response.statusCode == 200) {
-      //log(response.body);
       var urjson = json.decode(response.body);
       for (var jsondata in urjson) {
-        blist.add(Breed.fromJson(jsondata));
+        var flag = jsondata['name'];
+        bool checkflag = flag=='European Burmese' || flag == 'Malayan' ? false:true; 
+        blist.add(Breed.fromJson(jsondata, checkflag));
       }
     }
     return blist;
@@ -82,13 +84,15 @@ class _BreedlistState extends State<Breedlist> {
                       child: Stack(
                         alignment: Alignment.center,
                         children:[
+                          _breed[index].image_url == 'assets/hero.png' ?
                           Ink.image(
                             image: AssetImage('assets/hero.png'), //placeholder img
                             fit: BoxFit.fitHeight,
                             child: InkWell(
                               onTap: (){},
                             ),
-                          ),
+                          ) : 
+                          Image.network(_breed[index].image_url.toString()),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
