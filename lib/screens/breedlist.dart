@@ -10,6 +10,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:skeletons/skeletons.dart';
+import 'package:catpedia/components/createappbar.dart';
 class Img{
   Img({
     required this.url,
@@ -98,97 +99,103 @@ class _BreedlistState extends State<Breedlist> {
   Widget build(BuildContext context) {
     return Scaffold(
         body:SafeArea(
-          
-          child: ListView.builder(
-            itemBuilder: (context, index){
-              return Container(
-                  height: 200,
-                  child: Card(
-                      clipBehavior: Clip.antiAlias,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children:[
-                        !_isLoading ? 
-                        Ink.image(
-                          image: NetworkImage(img[index].url.toString()),
-                          fit: BoxFit.cover,
-                          child: InkWell(
-                            onTap: (){},
-                          ),
-                        ) : SkeletonAvatar(
-                          style: SkeletonAvatarStyle(
-                            height: double.infinity,
-                            width: double.infinity,
-                            shape: BoxShape.rectangle
-                          )
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.network('https://countryflagsapi.com/png/${_breed[index].country_code.toString().toLowerCase()}',
-                              height: 35,
-                              width: 35,
+          child: Column(
+            children: [
+              createAppBar(context: context, title: 'Breed List'),
+              Expanded(
+                child: ListView.builder(
+                  itemBuilder: (context, index){
+                    return Container(
+                        height: 200,
+                        child: Card(
+                            clipBehavior: Clip.antiAlias,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)
                             ),
-                            
-                            Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                Text(_breed[index].name.toString(),
-                                style: TextStyle(
-                                    fontSize: 25,
-                                    foreground: Paint()
-                                      ..style=PaintingStyle.stroke
-                                      ..strokeWidth=6
-                                      ..color=Colors.black
-                                ),),
-                                Text(_breed[index].name.toString(),
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.white
-                                  ),),
-                              ]
-                            )
-                          ],
-                        ),
-
-
-                      ],
-                    ),
-
-                      /*child: Stack(
-                        alignment: Alignment.center,
-                        children:[
-                          _breed[index].image_url == 'assets/hero.png' ?
-                          Ink.image(
-                            image: AssetImage('assets/hero.png'), //placeholder img
-                            fit: BoxFit.fitHeight,
-                            child: InkWell(
-                              onTap: (){},
-                            ),
-                          ) : 
-                          Image.network(_breed[index].image_url.toString()),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.network('https://countryflagsapi.com/png/${_breed[index].country_code.toString().toLowerCase()}',
-                                width: 25,
-                                height: 25,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children:[
+                              !_isLoading ? 
+                              Ink.image(
+                                image: NetworkImage(img[index].url.toString()),
+                                fit: BoxFit.cover,
+                                child: InkWell(
+                                  onTap: (){},
+                                ),
+                              ) : SkeletonAvatar(
+                                style: SkeletonAvatarStyle(
+                                  height: double.infinity,
+                                  width: double.infinity,
+                                  shape: BoxShape.rectangle
+                                )
                               ),
-                              Text(_breed[index].name.toString(),
-                                style: TextStyle(
-                                  fontSize: 25,
-                                ),),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.network('https://countryflagsapi.com/png/${_breed[index].country_code.toString().toLowerCase()}',
+                                    height: 35,
+                                    width: 35,
+                                  ),
+                                  
+                                  Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Text(_breed[index].name.toString(),
+                                      style: TextStyle(
+                                          fontSize: 25,
+                                          foreground: Paint()
+                                            ..style=PaintingStyle.stroke
+                                            ..strokeWidth=6
+                                            ..color=Colors.black
+                                      ),),
+                                      Text(_breed[index].name.toString(),
+                                        style: TextStyle(
+                                            fontSize: 25,
+                                            color: Colors.white
+                                        ),),
+                                    ]
+                                  )
+                                ],
+                              ),
+              
+              
                             ],
                           ),
-                        ],
-                      )*/
-                  )
-              );
-            },
-            itemCount: _breed.length,
+              
+                            /*child: Stack(
+                              alignment: Alignment.center,
+                              children:[
+                                _breed[index].image_url == 'assets/hero.png' ?
+                                Ink.image(
+                                  image: AssetImage('assets/hero.png'), //placeholder img
+                                  fit: BoxFit.fitHeight,
+                                  child: InkWell(
+                                    onTap: (){},
+                                  ),
+                                ) : 
+                                Image.network(_breed[index].image_url.toString()),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.network('https://countryflagsapi.com/png/${_breed[index].country_code.toString().toLowerCase()}',
+                                      width: 25,
+                                      height: 25,
+                                    ),
+                                    Text(_breed[index].name.toString(),
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                      ),),
+                                  ],
+                                ),
+                              ],
+                            )*/
+                        )
+                    );
+                  },
+                  itemCount: _breed.length,
+                ),
+              ),
+            ],
           ),
         ));
   }
