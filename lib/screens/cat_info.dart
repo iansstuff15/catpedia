@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'care_geninfo.dart';
 import 'care_food.dart';
+import 'care_grooming.dart';
 
 class CareInfo extends StatelessWidget {
   static String id = 'care_info';
@@ -94,7 +95,7 @@ class CareInfo extends StatelessWidget {
                         height: 10,
                       ),
                       car_ds(context, .450, .200, 30, 'assets/catgroom.jpg',
-                          "Grooming", ''),
+                          "Grooming", Groom.id),
                     ]),
                     SizedBox(
                       height: 10,

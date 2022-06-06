@@ -186,31 +186,35 @@ class Home extends StatelessWidget {
                     ),
                     Row(
                       children: <Widget>[
-                        Container(
-                          width: widgth * .430,
-                          padding: EdgeInsets.only(right: 10),
-                          decoration: BoxDecoration(
-                              color: Color(0xFFF5C975),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15))),
-                          child: Row(
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/facts1.png',
-                                height: 100,
-                                width: 105,
-                                fit: BoxFit.fitHeight,
-                              ),
-                              Container(
-                                  child: Text(
-                                'Facts',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.brown,
+                        GestureDetector(
+                          onTap: () =>
+                              Navigator.pushNamed(context, Maintenance.id),
+                          child: Container(
+                            width: widgth * .430,
+                            padding: EdgeInsets.only(right: 10),
+                            decoration: BoxDecoration(
+                                color: Color(0xFFF5C975),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15))),
+                            child: Row(
+                              children: <Widget>[
+                                Image.asset(
+                                  'assets/facts1.png',
+                                  height: 100,
+                                  width: 105,
+                                  fit: BoxFit.fitHeight,
                                 ),
-                              )),
-                            ],
+                                Container(
+                                    child: Text(
+                                  'Facts',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    color: Colors.brown,
+                                  ),
+                                )),
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
