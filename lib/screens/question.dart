@@ -46,7 +46,7 @@ class _Question extends State<Question> {
             
               }, 
               openBuilder: (BuildContext _, VoidCallback __){
-                return Aboutus(context: context);
+                return const AboutUs();
               }
             ),          
             ],
