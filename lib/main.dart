@@ -1,3 +1,4 @@
+import 'package:catpedia/screens/breed.dart';
 import 'package:catpedia/screens/home.dart';
 import 'package:catpedia/screens/search.dart';
 import 'package:catpedia/screens/question.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         Food.id: (context) => Food(),
         Question.id: (context) => Question(),
         Breedlist.id: (context) => Breedlist(),
+        BreedScreen.id:(context) => BreedScreen(),
       },
     );
   }
