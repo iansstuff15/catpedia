@@ -31,7 +31,8 @@ Row CardCreator({required String name, required String image, required String em
                      Text(name,
                       style: GoogleFonts.trirong(
                       fontSize: 17,
-                      fontWeight: FontWeight.w900,                   
+                      fontWeight: FontWeight.w900, 
+                      color: Colors.blue,                  
                       )
                      ),
                     const SizedBox(
@@ -40,7 +41,9 @@ Row CardCreator({required String name, required String image, required String em
                        child: Card(
                          child: ListTile(
                            contentPadding: EdgeInsets.symmetric(horizontal:10),
-                           leading: Icon(Icons.phone),
+                           leading: Icon(Icons.phone,
+                            color: Color.fromARGB(255, 232, 84, 104),
+                           ),
                            title: Text("09121124323",
                             style: TextStyle(
                               fontWeight: FontWeight.w500
@@ -55,7 +58,9 @@ Row CardCreator({required String name, required String image, required String em
                        child: Card(
                          child: ListTile(
                            contentPadding: const EdgeInsets.symmetric(horizontal:10),
-                           leading: const Icon(Icons.email),
+                           leading: const Icon(Icons.email,
+                            color: Color.fromARGB(255, 232, 84, 104),
+                           ),
                            title: Text(email,
                            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500)
                            ),
