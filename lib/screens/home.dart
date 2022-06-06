@@ -142,8 +142,7 @@ class Home extends StatelessWidget {
                       height: 10,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, Maintenance.id),
-                      // onTap: () => Navigator.pushNamed(context, Breedlist.id),
+                      onTap: () => Navigator.pushNamed(context, Breedlist.id),
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.only(top: 8, right: 17),
