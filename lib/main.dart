@@ -31,8 +31,9 @@ class MyApp extends StatelessWidget {
         Groom.id: (context) => Groom(),
         Memes.id: (context) => Memes(),
         Question.id: (context) => Question(),
-        Breedlist.id: (context) => BreedScreen(),
+        Breedlist.id: (context) => Breedlist(),
         Maintenance.id: (context) => Maintenance(),
+        BreedScreen.id:(context) => BreedScreen(),
 
       },
     );
