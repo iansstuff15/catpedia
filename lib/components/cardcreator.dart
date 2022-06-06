@@ -62,7 +62,7 @@ Container CardCreator({required String name, required String image, required Str
                          
                          child: ListTile(
                           
-                           contentPadding: const EdgeInsets.symmetric(horizontal:20),
+                           contentPadding: const EdgeInsets.symmetric(horizontal:10),
                            leading: const Icon(Icons.email,
                             color: Color.fromARGB(255, 232, 84, 104),
                            ),
