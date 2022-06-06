@@ -9,6 +9,7 @@ class Maintenance extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               'assets/maintenance.png',
