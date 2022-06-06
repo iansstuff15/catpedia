@@ -9,19 +9,21 @@ class Maintenance extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               'assets/maintenance.png',
               scale: 3.0,
             ),
+            const SizedBox(height: 25.0),
             Text(
-              'Screen is currently being fixed!'
-              'Check back later to ',
+              'Screen is currently being fixed!\n'
+              'Thank you for your understanding!',
               style: TextStyle(
                 color: Colors.grey[600],
-                fontSize: 16.0,
+                fontSize: 18.0,
               ),
+              textAlign: TextAlign.center,
             ),
             TextButton(
               onPressed: () => Navigator.pop(context),
@@ -30,7 +32,7 @@ class Maintenance extends StatelessWidget {
               ),
               child: const Text(
                 'Go back',
-                style: TextStyle(fontSize: 12),
+                style: TextStyle(fontSize: 16),
               ),
             )
           ],
