@@ -1,9 +1,11 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors_in_immutables, prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sort_child_properties_last, non_constant_identifier_names, unnecessary_string_interpolations
 
+import 'package:catpedia/screens/care_memes.dart';
 import 'package:flutter/material.dart';
 
 import 'care_geninfo.dart';
 import 'care_food.dart';
+import 'care_grooming.dart';
 import 'care_grooming.dart';
 
 class CareInfo extends StatelessWidget {
@@ -108,7 +110,7 @@ class CareInfo extends StatelessWidget {
                           height: 10,
                         ),
                         car_ds(context, .450, .200, 30, 'assets/catmeme.jpg',
-                            "Memes", ''),
+                            "Memes", Memes.id),
                       ],
                     ),
                   ],
