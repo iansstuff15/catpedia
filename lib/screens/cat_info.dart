@@ -7,6 +7,7 @@ import 'care_geninfo.dart';
 import 'care_food.dart';
 import 'care_grooming.dart';
 import 'care_grooming.dart';
+import 'maintenance.dart';
 
 class CareInfo extends StatelessWidget {
   static String id = 'care_info';
@@ -104,8 +105,14 @@ class CareInfo extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        car_ds(context, .450, .200, 30,
-                            'assets/catbehavior.jpg', "Behavior", ''),
+                        car_ds(
+                            context,
+                            .450,
+                            .200,
+                            30,
+                            'assets/catbehavior.jpg',
+                            "Behavior",
+                            Maintenance.id),
                         SizedBox(
                           height: 10,
                         ),
