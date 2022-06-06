@@ -132,45 +132,43 @@ class Food extends StatelessWidget {
                         style: TextStyle(fontSize: 12),
                       ),
                       SizedBox(height: 10),
-                      Container(
-                        margin:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                        decoration: BoxDecoration(
-                            color: Colors.pink,
-                            borderRadius: BorderRadius.circular(12),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromARGB(255, 255, 184, 179),
-                                blurRadius: 8.0,
-                                spreadRadius: 0.5,
-                                offset: Offset(1, 1),
-                              )
-                            ]),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Bookmark',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24,
-                                  color: Color.fromARGB(255, 255, 154, 187)),
-                            ),
-                            SizedBox(
-                              width: 8,
-                            ),
-                            Icon(Icons.bookmark,
-                                color: Color.fromARGB(255, 255, 154, 187))
-                          ],
-                        ),
-                      )
                     ],
                   ),
                 ),
               ),
-            )
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              decoration: BoxDecoration(
+                  color: Colors.pink,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 255, 184, 179),
+                      blurRadius: 8.0,
+                      spreadRadius: 0.5,
+                      offset: Offset(1, 1),
+                    )
+                  ]),
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Bookmark',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: Color.fromARGB(255, 255, 154, 187)),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Icon(Icons.bookmark,
+                      color: Color.fromARGB(255, 255, 154, 187))
+                ],
+              ),
+            ),
           ]),
         ),
       ),
@@ -199,13 +197,12 @@ Container text(BuildContext context, String title, String par, String pict,
       SizedBox(height: 10),
       ClipRRect(
         borderRadius: BorderRadius.circular(8.0),
-        child:Image.asset(
-        "$pict",
-        // width: width_ * width1,
-        // height: height_ * height1,
+        child: Image.asset(
+          "$pict",
+          // width: width_ * width1,
+          // height: height_ * height1,
+        ),
       ),
-         ),
-      
       SizedBox(height: 15),
       Center(
         child: Text(
