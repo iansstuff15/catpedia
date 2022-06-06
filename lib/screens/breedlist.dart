@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:skeletons/skeletons.dart';
 import 'package:catpedia/components/createappbar.dart';
+import 'package:catpedia/screens/info.dart';
 class Img{
   Img({
     required this.url,
@@ -26,17 +27,20 @@ class Breed {
     required this.id,
     required this.name,
     required this.country_code,
+    required this.description
   //  required this.image_url
   });
 
   final String id;
   final String name;
   final String country_code;
+  final String description;
 //  final String image_url;
 
   factory Breed.fromJson(Map<String, dynamic> json,) => Breed(
         id: json['id'],
         name: json['name'],
+        description: json['description'],
         country_code: json['country_code'] == "SP" ? "SG" : json['country_code'],
         // image_url: json['image']['url'],
         // image_url: flag ? json['image']['url']:'assets/hero.png',
@@ -148,7 +152,10 @@ class _BreedlistState extends State<Breedlist> {
                                 image: NetworkImage(img[index].url.toString()),
                                 fit: BoxFit.cover,
                                 child: InkWell(
-                                  onTap: (){},
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Catinfo(
+                                      imgurl: img[index].url.toString(), desc: _breed[index].description.toString(), name: _breed[index].name.toString(),)));
+                                  },
                                 ),
                               ) : SkeletonAvatar(
                                 style: SkeletonAvatarStyle(

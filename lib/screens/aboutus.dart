@@ -14,7 +14,7 @@ class _AboutUsState extends State<AboutUs> {
   Widget build(BuildContext context) {
   return SafeArea(
         child: Scaffold(
-          backgroundColor: const Color.fromARGB(255, 165, 163, 163),
+          backgroundColor:Color.fromARGB(210, 255, 255, 255),
           body: Column(
             children: [
               createAppBar(context: context, title: 'About us'),
