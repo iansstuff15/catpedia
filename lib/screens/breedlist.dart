@@ -25,19 +25,19 @@ class Breed {
     required this.id,
     required this.name,
     required this.country_code,
- //   required this.image_url
+   required this.image_url
   });
 
   final String id;
   final String name;
   final String country_code;
-//  final String image_url;
+ final String image_url;
 
   factory Breed.fromJson(Map<String, dynamic> json,) => Breed(
         id: json['id'],
         name: json['name'],
         country_code: json['country_code'],
-//        image_url: json['image']['url'],
+        image_url: json['image']['url'],
         // image_url: flag ? json['image']['url']:'assets/hero.png',
         // Add bool flag in paramter
       );
