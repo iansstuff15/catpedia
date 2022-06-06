@@ -39,6 +39,7 @@ class Memes extends StatelessWidget {
                     color: Colors.redAccent),
               ),
             ]),
+            SizedBox(height: 20.0),
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
