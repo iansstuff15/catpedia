@@ -105,7 +105,35 @@ class _BreedlistState extends State<Breedlist> {
         body:SafeArea(
           child: Column(
             children: [
-              createAppBar(context: context, title: 'Breed List'),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,  
+                children: [
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                Text(
+                  'General Care',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Colors.pink),
+                ),
+                SizedBox(
+                  width: 10,
+                )
+              ]),
+              ),
+              SizedBox(height: 10,),
               Expanded(
                 child: ListView.builder(
                   itemBuilder: (context, index){
