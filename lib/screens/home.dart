@@ -3,6 +3,7 @@
 import 'dart:ffi';
 
 import 'package:catpedia/screens/breedlist.dart';
+import 'package:catpedia/screens/maintenance.dart';
 import 'package:catpedia/screens/search.dart';
 import 'package:catpedia/screens/cat_info.dart';
 import 'package:flutter/material.dart';
@@ -141,7 +142,8 @@ class Home extends StatelessWidget {
                       height: 10,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, Breedlist.id),
+                      onTap: () => Navigator.pushNamed(context, Maintenance.id),
+                      // onTap: () => Navigator.pushNamed(context, Breedlist.id),
                       child: Container(
                         width: double.infinity,
                         padding: EdgeInsets.only(top: 8, right: 17),
