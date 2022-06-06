@@ -98,6 +98,7 @@ class _BreedlistState extends State<Breedlist> {
   Widget build(BuildContext context) {
     return Scaffold(
         body:SafeArea(
+          
           child: ListView.builder(
             itemBuilder: (context, index){
               return Container(

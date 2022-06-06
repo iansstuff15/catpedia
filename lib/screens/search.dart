@@ -2,6 +2,7 @@
 
 import 'dart:developer';
 
+import 'package:catpedia/components/search_component.dart';
 import 'package:catpedia/components/skeleton.dart';
 import 'package:catpedia/helpers/request_helper.dart';
 import 'package:flutter/material.dart';
@@ -107,10 +108,16 @@ class _SearchState extends State<Search> {
                       )
                     ],
                   ),
+                 /// Adding a space between the two widgets.
+                 /// 
                   SizedBox(
                     height: 20,
                   ),
-                  SearchItemSkeleton(),
+                  // SearchItemSkeleton(),
+                  //  SizedBox(
+                  //   height: 20,
+                  // ),
+                 
                 ],
               ))),
     );

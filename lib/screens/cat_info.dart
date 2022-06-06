@@ -19,14 +19,23 @@ class CareInfo extends StatelessWidget {
             child: Container(
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: SingleChildScrollView(
-        child: Column(children: <Widget>[
-          Row(children: [
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+       Container(
+         decoration: BoxDecoration(
+           borderRadius: BorderRadius.circular(18),
+           color: Colors.yellow),
+         padding: EdgeInsets.all(20),
+
+         child:Column(children:[   Row(children: [
             GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Icon(
@@ -36,11 +45,29 @@ class CareInfo extends StatelessWidget {
               ),
             ),
             Container(width: width_ * .20, color: Colors.transparent),
-            Text(
-              'Care Information',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            ),
+           
           ]),
+          SizedBox(height: 20,),
+          Row(
+            children: [
+          Image(image: AssetImage('assets/care_info.png'),width: 250,),
+           Column(
+             crossAxisAlignment: CrossAxisAlignment.start,
+             children: [
+            Text(
+              'Care',
+              style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold,color: Colors.brown),
+            ),
+            Text(
+              'Information',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+            ),
+             ],
+           ),
+           
+            ],
+          ),]),),
+         
           SizedBox(height: 30),
           car_ds(context, .900, .230, 40, 'assets/catgeneral.jpg', "General",
               GenInfo.id),
@@ -93,7 +120,7 @@ class CareInfo extends StatelessWidget {
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(18),
       ),
       child: Stack(
         alignment: Alignment.center,
@@ -101,12 +128,18 @@ class CareInfo extends StatelessWidget {
           Ink.image(
             image: AssetImage('$pict'),
             child: InkWell(
+              highlightColor:Colors.yellow,
+              
               onTap: () => Navigator.pushNamed(context, route),
               child: Center(
-                child: Text(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:[
+                  Text(
                   "$text",
-                  style: TextStyle(color: Colors.white, fontSize: font),
-                ),
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,fontSize: 35),
+                ), 
+                 ])
               ),
             ),
             width: width * width1,

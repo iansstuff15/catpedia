@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -54,6 +54,14 @@ class GenInfo extends StatelessWidget {
     double width_ = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: () {
+      //     // Add your onPressed code here!
+      //   },
+      //   label: const Text('Bookmark'),
+      //   icon: const Icon(Icons.bookmark),
+      //   backgroundColor: Colors.pink,
+      // ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
@@ -65,7 +73,7 @@ class GenInfo extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Colors.blue,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Icon(
@@ -77,7 +85,7 @@ class GenInfo extends StatelessWidget {
                 Container(width: width_ * .20, color: Colors.transparent),
                 Text(
                   'General Care',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Colors.pink),
                 ),
               ]),
               SizedBox(height: 20),
@@ -89,15 +97,17 @@ class GenInfo extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Image.asset(
-                          'assets/catgeneral.jpg',
-                          scale: 5.0,
-                        ),
+                      
+                    ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child:Image(image: AssetImage('assets/catgeneral.jpg'))
+                      ),
+                       
                         SizedBox(height: 30),
                         Text(
                           'Each cat is unique in their own way, whether it is a very friendly & cuddly one or a fearful one. The environment in which a cat grows is an important factor here.',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 14,
                           ),
                         ),
                         SizedBox(height: 30),
@@ -106,7 +116,7 @@ class GenInfo extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 24,
-                            color: Colors.purple[600],
+                            color: Colors.pink[600],
                           ),
                         ),
                         SizedBox(height: 30),
@@ -115,7 +125,7 @@ class GenInfo extends StatelessWidget {
                             children: [
                               Text(
                                 '• ${bulletPoints[i]}',
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 12),
                               ),
                               SizedBox(height: 5),
                             ],
@@ -128,7 +138,32 @@ class GenInfo extends StatelessWidget {
                   ),
                 ),
               ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal:10,vertical: 20),
+                decoration: BoxDecoration(
+                  color: Colors.pink,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 255, 184, 179),
+                        blurRadius: 8.0,
+                        spreadRadius: 0.5,
+                        offset: Offset(1, 1),
+                      )
+                    ]
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 30,vertical: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Bookmark',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Color.fromARGB(255, 255, 154, 187)),),
+                    SizedBox(width: 8,),
+                    Icon(Icons.bookmark,color: Color.fromARGB(255, 255, 154, 187))
+                  ],
+                ),
+              )
             ],
+
           ),
         ),
       ),
@@ -137,6 +172,10 @@ class GenInfo extends StatelessWidget {
 }
 
 Container headingSub({header, sub}) => Container(
+    decoration: BoxDecoration(
+      
+    ),
+    padding: EdgeInsets.symmetric(horizontal:20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -144,19 +183,20 @@ Container headingSub({header, sub}) => Container(
             header,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 24,
-              color: Colors.purple[600],
+              fontSize: 18,
+              color: Colors.pink[600],
             ),
           ),
           SizedBox(height: 14),
           Text(
             sub,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 12,
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 30.0),
+          SizedBox(height: 40.0),
+
         ],
       ),
     );
