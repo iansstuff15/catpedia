@@ -36,7 +36,7 @@ class Breed {
   factory Breed.fromJson(Map<String, dynamic> json,) => Breed(
         id: json['id'],
         name: json['name'],
-        country_code: json['country_code'],
+        country_code: json['country_code'] == "SP" ? "SG" : json['country_code'],
         // image_url: json['image']['url'],
         // image_url: flag ? json['image']['url']:'assets/hero.png',
         // Add bool flag in paramter
