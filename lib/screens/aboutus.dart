@@ -26,11 +26,11 @@ class _AboutUsState extends State<AboutUs> {
                       const SizedBox(
                         height: 20
                       ),
-                      CardCreator(name: "Jael, Zehll Fierran Day D.", image: 'profpic.jpg', email: 'qzfddjael@tip.edu.ph'),
-                      CardCreator(name: "Bormate, Kristian Dereck D.", image: 'Kprofpic.jpg', email: 'qkddbormate@tip.edu.ph'),
-                      CardCreator(name: "Manalastas, Aryanna B. ", image: 'YProf_pic.png', email: 'qagbmanalastas@tip.edu.ph'),
-                      CardCreator(name: "Melegrito, John Adrian T.", image: 'Aprofpic.jpg', email: 'qjatmelegrito@tip.edu.ph'),
-                      CardCreator(name: "Powell, Dirangen D.", image: 'Dprofpic.jpg', email: 'qdldppowell@tip.edu.ph'),
+                      CardCreator(name: "Jael, Zehll Fierran Day D.", image: 'profpic.jpg', email: 'qzfddjael@tip.edu.ph', job: 'Contributor'),
+                      CardCreator(name: "Bormate, Kristian Dereck D.", image: 'Kprofpic.jpg', email: 'qkddbormate@tip.edu.ph', job: 'Flow'),
+                      CardCreator(name: "Manalastas, Aryanna B. ", image: 'YProf_pic.png', email: 'qagbmanalastas@tip.edu.ph', job: 'Collector'),
+                      CardCreator(name: "Melegrito, John Adrian T.", image: 'Aprofpic.jpg', email: 'qjatmelegrito@tip.edu.ph', job: 'Pioneer'),
+                      CardCreator(name: "Powell, Dirangen D.", image: 'Dprofpic.jpg', email: 'qdldppowell@tip.edu.ph', job: 'Designer'),
                       const SizedBox(
                         height: 20
                       ),
