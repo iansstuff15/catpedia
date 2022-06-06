@@ -83,11 +83,17 @@ SafeArea _Aboutus({required BuildContext context}) {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children:   <Widget>[
+                      const SizedBox(
+                        height: 20
+                      ),
                       _CardCreator(name: "Jael, Zehll Fierran Day D.", image: 'profpic.jpg', email: 'qzfddjael@tip.edu.ph'),
                       _CardCreator(name: "Bormate, Kristian Dereck D.", image: 'Kprofpic.jpg', email: 'qkddbormate@tip.edu.ph'),
                       _CardCreator(name: "Manalastas, Aryanna B. ", image: 'YProf_pic.png', email: 'qagbmanalastas@tip.edu.ph'),
                       _CardCreator(name: "Melegrito, John Adrian T.", image: 'Aprofpic.jpg', email: 'qjatmelegrito@tip.edu.ph'),
                       _CardCreator(name: "Powell, Dirangen D.", image: 'Dprofpic.jpg', email: 'qdldppowell@tip.edu.ph'),
+                      const SizedBox(
+                        height: 20
+                      ),
                     ],
                   ),
                 ),
