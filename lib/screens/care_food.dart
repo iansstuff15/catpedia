@@ -51,7 +51,10 @@ class Food extends StatelessWidget {
               Container(width: width_ * .20, color: Colors.transparent),
               Text(
                 'Foods for Cats',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.redAccent),
               ),
             ]),
             SizedBox(height: 20),
@@ -59,16 +62,20 @@ class Food extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.asset(
-                        'assets/food_cat.jpg',
-                        width: width_ * .900,
-                        height: height_ * .300,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          'assets/food_cat.jpg',
+                          // width: width_ * .900,
+                          // height: height_ * .300,
+                        ),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 30,
                       ),
                       Text(
                         "People foods cats can eat",
@@ -84,10 +91,12 @@ class Food extends StatelessWidget {
                       Text(
                         "The majority of your kitty's diet should consist of nutritionally complete cat food, but you can occasionally give them a treat from your plate. All you need to know is how to select feline-friendly snacks that are high in nutrients. If you do give them fish, make sure it's not raw.",
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 14,
                         ),
                       ),
-                      SizedBox(height: 20,),
+                      SizedBox(
+                        height: 20,
+                      ),
                       text(context, title[0], par[0], 'assets/food_meat.jpg',
                           .900, .300),
                       text(context, title[1], par[1], 'assets/food_grains.jpg',
@@ -101,13 +110,13 @@ class Food extends StatelessWidget {
                       text(context, title[5], par[5], 'assets/food_cheese.jpg',
                           .900, .300),
                       SizedBox(
-                        height: 20,
+                        height: 30,
                       ),
                       Text(
                         "Foods Cats SHOULD NOT eat",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 24,
                           color: Colors.redAccent,
                         ),
                       ),
@@ -120,9 +129,43 @@ class Food extends StatelessWidget {
                         "• Bread dough\n"
                         "• Alcohol\n"
                         "• Xylitol, an artificial sweetener found in sugar-free gum and candy",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 12),
                       ),
                       SizedBox(height: 10),
+                      Container(
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                        decoration: BoxDecoration(
+                            color: Colors.pink,
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 255, 184, 179),
+                                blurRadius: 8.0,
+                                spreadRadius: 0.5,
+                                offset: Offset(1, 1),
+                              )
+                            ]),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Bookmark',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24,
+                                  color: Color.fromARGB(255, 255, 154, 187)),
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            Icon(Icons.bookmark,
+                                color: Color.fromARGB(255, 255, 154, 187))
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -141,29 +184,34 @@ Container text(BuildContext context, String title, String par, String pict,
   double height_ = MediaQuery.of(context).size.height;
 
   return Container(
+    padding: EdgeInsets.symmetric(horizontal: 20),
     child: Column(children: [
       SizedBox(height: 20),
       Text(
         "$title",
         style: TextStyle(
-          fontSize: 25,
+          fontSize: 24,
           fontWeight: FontWeight.bold,
           fontStyle: FontStyle.italic,
           color: Colors.redAccent,
         ),
       ),
       SizedBox(height: 10),
-      Image.asset(
+      ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child:Image.asset(
         "$pict",
-        width: width_ * width1,
-        height: height_ * height1,
+        // width: width_ * width1,
+        // height: height_ * height1,
       ),
+         ),
+      
       SizedBox(height: 15),
       Center(
         child: Text(
           "$par",
           textWidthBasis: TextWidthBasis.longestLine,
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 12),
         ),
       ),
       SizedBox(
