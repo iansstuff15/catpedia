@@ -125,7 +125,7 @@ class _BreedlistState extends State<Breedlist> {
                   ),
                 ),
                 Text(
-                  'General Care',
+                  'Breeds',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Colors.pink),
                 ),
                 SizedBox(
