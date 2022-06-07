@@ -14,7 +14,6 @@ class ListComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log(name.toString());
     return SingleChildScrollView(
         child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +53,7 @@ class ListComponent extends StatelessWidget {
                     child: Image(
                       image: NetworkImage(
                         countryCode == "SP" ?  
-                        'https://countryflagsapi.com/png/sp' :
+                        'https://countryflagsapi.com/png/sg' :
                         'https://countryflagsapi.com/png/$countryCode'),
                       width: 20,
                     ),

@@ -83,6 +83,7 @@ class _SearchState extends State<Search> {
                                     setState(() {
                                       searchItems = response;
                                     });                                  }
+                                    
                                 },
                                 focusNode: focusSearch,
                                 textAlign: TextAlign.center,
