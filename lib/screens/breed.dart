@@ -180,9 +180,9 @@ class BreedScreen extends StatelessWidget {
             ),
             
             SizedBox(
-              height: 100,
+              height: 130,
               width: 340,
-              child: Text('$desc')),
+              child: Text('$desc',style: TextStyle(fontSize: 14),)),
 
              Container(
                 margin: EdgeInsets.symmetric(horizontal:10,vertical: 20),
