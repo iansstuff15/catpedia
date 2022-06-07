@@ -79,14 +79,12 @@ class _SearchState extends State<Search> {
                                     return;
                                   }
                                   if (response != null) {
-                                    log(url);
-                                    log(response.runtimeType.toString());
+
                                     setState(() {
                                       searchItems = response;
                                     });
-                                    log(searchItems.runtimeType.toString());
-                                    log(searchItems.length.toString());
-                                    print(response.toString());
+
+                                    print(searchItems[0]['name']);
                                   }
                                 },
                                 focusNode: focusSearch,
@@ -144,7 +142,7 @@ class _SearchState extends State<Search> {
                             height: 20,
                           ),
                           itemBuilder: (context, index) {
-                            return ListComponent(searchItems[index],searchItems[index].name);
+                            return ListComponent(searchItems[index],searchItems[index]['name']);
                           },
                           itemCount: searchItems.length,
                         ),
