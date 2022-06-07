@@ -8,7 +8,10 @@ import 'package:skeletons/skeletons.dart';
 class ListComponent extends StatelessWidget {
   final Map<String, dynamic> item;
   final String name;
-  ListComponent(this.item,this.name);
+  final String country_code;
+  final String desc;
+  
+  ListComponent(this.item,this.name,this.country_code,this.desc);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +39,7 @@ class ListComponent extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Title',
+                  name,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.pink,
@@ -49,7 +52,7 @@ class ListComponent extends StatelessWidget {
                   borderRadius: BorderRadius.circular(3.0),
                   child: Image(
                     image: NetworkImage(
-                        'https://cdn.britannica.com/73/3473-004-6E573BFA/Flag-Philippines.jpg'),
+                        'https://countryflagsapi.com/png/${country_code.toLowerCase()}'),
                     width: 20,
                   ),
                 ),
@@ -57,9 +60,15 @@ class ListComponent extends StatelessWidget {
             ),
             Column(
               children: [
-                Text(
-                  'Reprehenderit quis mollit in veniam pariatur aliquip.',
-                  style: TextStyle(overflow: TextOverflow.clip),
+                SizedBox(
+                  height: 50,
+                  width: 220,
+                  child: Text(
+                    desc,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      overflow: TextOverflow.clip),
+                  ),
                 )
               ],
             )
