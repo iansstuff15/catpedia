@@ -22,7 +22,6 @@ class BreedScreen extends StatelessWidget {
           height: double.infinity,
           padding: EdgeInsets.only(left: 20, top: 10,right: 20),
           child:Stack(
-        
         children: [
           
             Row(
@@ -95,16 +94,29 @@ class BreedScreen extends StatelessWidget {
                         ],
                       ),
             
-            Positioned(
-              top: 80,
-              child:  ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-          child: Image(
-            image: NetworkImage(
-                imgurl),
-          
-          ),
-        ),),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(padding: EdgeInsets.fromLTRB(0, 90, 0, 0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image(
+                          image: NetworkImage(
+                              imgurl),
+
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),)
+
+              ],
+            ),
            
            Positioned(
 
