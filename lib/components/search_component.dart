@@ -8,7 +8,8 @@ import 'package:skeletons/skeletons.dart';
 class ListComponent extends StatelessWidget {
   final Map<String, dynamic> item;
   final String name;
-  ListComponent(this.item,this.name);
+   final String description;
+  ListComponent(this.item,this.name,this.description);
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +24,11 @@ class ListComponent extends StatelessWidget {
           child: Image(
             image: NetworkImage(
                 'https://blog.xojo.com/wp-content/uploads/2015/10/Cat1.pngt1466486449161'),
-            width: 120,
+            width: 110,
           ),
         ),
         SizedBox(
-          width: 10,
+          width: 5,
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -44,7 +45,7 @@ class ListComponent extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.pink,
-                      fontSize: 20),
+                      fontSize: 16),
                 ),
                 SizedBox(
                   width: 3,
@@ -65,9 +66,10 @@ class ListComponent extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 200,
+                  height: 50,
                   child:  Text(
-                  'Reprehenderit quis mollit in veniam pariatur aliquip.',
-                  style: TextStyle(overflow: TextOverflow.clip),
+                 description,
+                  style: TextStyle(overflow: TextOverflow.clip,),
                 )
                 )
                
