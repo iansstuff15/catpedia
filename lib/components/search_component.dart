@@ -63,15 +63,19 @@ class ListComponent extends StatelessWidget {
             ),
             Column(
               children: [
-                SizedBox(
-                    width: 200,
-                    height: 50,
-                    child: Text(
-                      description,
-                      style: TextStyle(
-                        overflow: TextOverflow.clip,
-                      ),
-                    ))
+                Padding(padding: EdgeInsets.fromLTRB(0, 2, 0, 25),
+                  child: SizedBox(
+                      width: 200,
+                      height: 140,
+                      child: Text(
+                        description,
+                        style: TextStyle(
+                          fontSize: 12,
+                          overflow: TextOverflow.visible,
+                        ),
+                      )),
+                )
+
               ],
             )
           ],
