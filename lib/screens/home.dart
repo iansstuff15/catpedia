@@ -45,18 +45,18 @@ class Home extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    'Hello John,',
+                    'Hello,',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   Text(
-                    'Some Text Here,',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+                    'Welcome to Catpedia,',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   ),
                   Text(
-                    'Some More Text Here,',
+                    'The purrfect place to learn about cats !',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 19,
+                        fontSize: 15,
                         color: Color(0xff7EBCC3)),
                   ),
                   SizedBox(height: 10),
