@@ -33,10 +33,14 @@ class ListComponent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            
+ SizedBox(
+                  width: 200,
+                  child:   Row(
               children: [
+               
                 Text(
-                  'Title',
+                  name,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.pink,
@@ -55,12 +59,18 @@ class ListComponent extends StatelessWidget {
                 ),
               ],
             ),
+                ),
+          
             Column(
               children: [
-                Text(
+                SizedBox(
+                  width: 200,
+                  child:  Text(
                   'Reprehenderit quis mollit in veniam pariatur aliquip.',
                   style: TextStyle(overflow: TextOverflow.clip),
                 )
+                )
+               
               ],
             )
           ],
