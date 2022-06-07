@@ -4,7 +4,11 @@ import 'package:catpedia/helpers/request_helper.dart';
 import 'package:flutter/material.dart';
 
 class BreedScreen extends StatelessWidget {
-  const BreedScreen({Key? key}) : super(key: key);
+  final String imgurl;
+  final String desc;
+  final String name;
+  final String country_code;
+  const BreedScreen({required this.imgurl, required this.desc, required this.name, required this.country_code});
   static String id = 'Breed';
   @override
   Widget build(BuildContext context) {
@@ -94,10 +98,10 @@ class BreedScreen extends StatelessWidget {
             Positioned(
               top: 80,
               child:  ClipRRect(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(8.0),
           child: Image(
             image: NetworkImage(
-                'https://blog.xojo.com/wp-content/uploads/2015/10/Cat1.pngt1466486449161'),
+                imgurl),
           
           ),
         ),),
@@ -138,7 +142,7 @@ class BreedScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Title',
+                  name,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.pink,
@@ -151,7 +155,7 @@ class BreedScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(3.0),
                   child: Image(
                     image: NetworkImage(
-                        'https://cdn.britannica.com/73/3473-004-6E573BFA/Flag-Philippines.jpg'),
+                        'https://countryflagsapi.com/png/${country_code.toLowerCase()}'),
                     width: 20,
                   ),
                 ),
@@ -163,7 +167,11 @@ class BreedScreen extends StatelessWidget {
               ],
             ),
             
-            Text('Commodo nostrud Lorem excepteur et cillum minim esse elit. Officia voluptate ullamco deserunt duis tempor exercitation minim eiusmod enim tempor Lorem culpa tempor. Deserunt anim velit duis sit. Est aliquip do culpa tempor.Id sunt elit laborum ullamco irure consectetur consectetur commodo labore sint eu. Ipsum officia commodo est magna dolore. In consectetur irure mollit ex. Et commodo voluptate labore ut ex nisi enim aute sunt ut. Ex esse irure excepteur est qui quis et elit minim adipisicing tempor sint et excepteur. Lorem laboris proident excepteur mollit exercitation elit labore Lorem dolor velit esse. Mollit veniam dolore ullamco sint in dolore pariatur laboris id aliqua ipsum aute duis.'),
+            SizedBox(
+              height: 100,
+              width: 340,
+              child: Text('$desc')),
+
              Container(
                 margin: EdgeInsets.symmetric(horizontal:10,vertical: 20),
                 decoration: BoxDecoration(

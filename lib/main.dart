@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
         Question.id: (context) => Question(),
         Breedlist.id: (context) => Breedlist(),
         Maintenance.id: (context) => Maintenance(),
-        BreedScreen.id:(context) => BreedScreen(),
 
       },
     );

@@ -12,6 +12,8 @@ import 'package:http/http.dart' as http;
 import 'package:skeletons/skeletons.dart';
 import 'package:catpedia/components/createappbar.dart';
 import 'package:catpedia/screens/info.dart';
+import 'package:catpedia/screens/breed.dart';
+
 class Img{
   Img({
     required this.url,
@@ -125,7 +127,7 @@ class _BreedlistState extends State<Breedlist> {
                   ),
                 ),
                 Text(
-                  'General Care',
+                  'Breed List',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Colors.pink),
                 ),
                 SizedBox(
@@ -153,8 +155,9 @@ class _BreedlistState extends State<Breedlist> {
                                 fit: BoxFit.cover,
                                 child: InkWell(
                                   onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Catinfo(
-                                      imgurl: img[index].url.toString(), desc: _breed[index].description.toString(), name: _breed[index].name.toString(),)));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> BreedScreen(
+                                      imgurl: img[index].url.toString(), desc: _breed[index].description.toString(), name: _breed[index].name.toString(), country_code: _breed[index].country_code.toString(),
+                                      )));
                                   },
                                 ),
                               ) : SkeletonAvatar(
