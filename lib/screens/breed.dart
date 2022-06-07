@@ -124,7 +124,7 @@ class BreedScreen extends StatelessWidget {
                         child: 
                       Container(
                         height: 350,
-                        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 40),
+                        padding: EdgeInsets.symmetric(horizontal: 11,vertical: 40),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(topLeft: Radius.circular(15),topRight: Radius.circular(15)),
                           color: Colors.white,
@@ -173,12 +173,6 @@ class BreedScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
-              children: [
-              
-              ],
-            ),
-            
             SizedBox(
               height: 130,
               width: 340,
