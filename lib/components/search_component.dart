@@ -8,8 +8,9 @@ import 'package:skeletons/skeletons.dart';
 class ListComponent extends StatelessWidget {
   final Map<String, dynamic> item;
   final String name;
-   final String description;
-  ListComponent(this.item,this.name,this.description);
+  final String description;
+  final String countryCode;
+  ListComponent(this.item, this.name, this.description,this.countryCode);
 
   @override
   Widget build(BuildContext context) {
@@ -34,45 +35,41 @@ class ListComponent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
- SizedBox(
-                  width: 200,
-                  child:   Row(
-              children: [
-               
-                Text(
-                  name,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.pink,
-                      fontSize: 16),
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(3.0),
-                  child: Image(
-                    image: NetworkImage(
-                        'https://cdn.britannica.com/73/3473-004-6E573BFA/Flag-Philippines.jpg'),
-                    width: 20,
+            SizedBox(
+              width: 200,
+              child: Row(
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink,
+                        fontSize: 16),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 3,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(3.0),
+                    child: Image(
+                      image: NetworkImage('https://countryflagsapi.com/png/$countryCode'),
+                      width: 20,
+                    ),
+                  ),
+                ],
+              ),
             ),
-                ),
-          
             Column(
               children: [
                 SizedBox(
-                  width: 200,
-                  height: 50,
-                  child:  Text(
-                 description,
-                  style: TextStyle(overflow: TextOverflow.clip,),
-                )
-                )
-               
+                    width: 200,
+                    height: 50,
+                    child: Text(
+                      description,
+                      style: TextStyle(
+                        overflow: TextOverflow.clip,
+                      ),
+                    ))
               ],
             )
           ],

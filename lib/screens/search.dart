@@ -142,7 +142,7 @@ class _SearchState extends State<Search> {
                             height: 20,
                           ),
                           itemBuilder: (context, index) {
-                            return ListComponent(searchItems[index],searchItems[index]['name'],searchItems[index]['description']);
+                            return ListComponent(searchItems[index],searchItems[index]['name'],searchItems[index]['description'],searchItems[index]['country_code']);
                           },
                           itemCount: searchItems.length,
                         ),
