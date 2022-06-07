@@ -9,8 +9,8 @@ class ListComponent extends StatelessWidget {
   final Map<String, dynamic> item;
   final String name;
   final String description;
-  final String country_code;
-  ListComponent(this.item,this.name,this.description, this.country_code);
+  final String countryCode;
+  ListComponent(this.item, this.name, this.description,this.countryCode);
 
   @override
   Widget build(BuildContext context) {
@@ -35,46 +35,44 @@ class ListComponent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
- SizedBox(
-                  width: 200,
-                  child:   Row(
-              children: [
-               
-                Text(
-                  name,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.pink,
-                      fontSize: 16),
-                ),
-                SizedBox(
-                  width: 3,
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(3.0),
-                  child: Image(
-                    image: NetworkImage(
-                      country_code == 'SP' ? 'https://countryflagsapi.com/png/sg':
-                        'https://countryflagsapi.com/png/${country_code.toLowerCase()}'),
-                    width: 20,
+            SizedBox(
+              width: 200,
+              child: Row(
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink,
+                        fontSize: 16),
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 3,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(3.0),
+                    child: Image(
+                      image: NetworkImage(
+                        countryCode == "SP" ?  
+                        'https://countryflagsapi.com/png/sp' :
+                        'https://countryflagsapi.com/png/$countryCode'),
+                      width: 20,
+                    ),
+                  ),
+                ],
+              ),
             ),
-                ),
-          
             Column(
               children: [
                 SizedBox(
-                  width: 200,
-                  height: 50,
-                  child:  Text(
-                 description,
-                  style: TextStyle(overflow: TextOverflow.clip,),
-                )
-                )
-               
+                    width: 200,
+                    height: 50,
+                    child: Text(
+                      description,
+                      style: TextStyle(
+                        overflow: TextOverflow.clip,
+                      ),
+                    ))
               ],
             )
           ],
